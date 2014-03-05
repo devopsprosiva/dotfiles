@@ -18,6 +18,8 @@ syntax enable                 " Enable syntax highlighting
 set rtp+=$HOME/.vim/bundle/vundle/          " include vundle
 call vundle#rc()                            " init vundle
 
+""" Bundles
+"
 " let Vundle manage Vundle
 " required!
 Bundle 'gmarik/vundle'
@@ -28,8 +30,29 @@ Bundle 'scrooloose/syntastic'
 " Nerdtree to browse filesystem from vim
 Bundle 'scrooloose/nerdtree'
 
-" Set options
+" Puppet 
+Bundle 'rodjek/vim-puppet'
+
+" Tabular to align text
+Bundle 'godlygeek/tabular'
+
+""" Syntastic
+" syntastic checking mode
+let g:syntastic_mode_map = { 'mode': 'active',                              
+      \ 'active_filetypes': ['puppet', 'shell', 'ruby'],           
+      \ 'passive_filetypes': ['php', 'html'] }
+
+" check syntax on file open
+let g:syntastic_check_on_open=1
+
+" enable puppet module detection
+let g:puppet_module_detect=1
+
+
+" Generic options
 set number                      " Show line numbers
+set autoindent                  " Carry over indenting from previous line
+set autoread                    " Auto reload a file when there are changes outside of vi
 set cindent                     " Automatic program indenting
 set hlsearch                    " Highlight searching
 set ignorecase                  " Case insensitive
@@ -43,6 +66,7 @@ set cursorline                  " Show a line where the cursor is
 set history=20000               " How many lines of history to save
 set wildmenu                    " Show possible completions on command line
 set wildmode=list:longest,full  " List all options and complete
+set nobackup                    " disable backups
 
 " Options for statusline
 highlight StatusLine   cterm=NONE ctermbg=blue ctermfg=white
