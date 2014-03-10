@@ -54,7 +54,6 @@ Bundle "garbas/vim-snipmate"
 Bundle "honza/vim-snippets"
 
 " Autocompletion
-" Bundle 'Shougo/neocomplcache.vim'
 Bundle 'Valloric/YouCompleteMe'
 
 " Show git diff in the gutter
@@ -135,9 +134,6 @@ let g:airline_section_x=""
 let g:airline_section_y="%{strlen(&ft)?&ft:'none'}"
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#branch#enabled = 1 " enable/disable fugitive/lawrencium integration 
-
-" neocomplcache keybindings
-let g:neocomplcache_enable_at_startup = 1
 
 " enable/disable syntastic integration
 let g:airline#extensions#syntastic#enabled = 1
