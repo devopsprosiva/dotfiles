@@ -53,9 +53,22 @@ Bundle "tomtom/tlib_vim"
 Bundle "garbas/vim-snipmate"
 Bundle "honza/vim-snippets"
 
+" Autocompletion
+" Bundle 'Shougo/neocomplcache.vim'
+Bundle 'Valloric/YouCompleteMe'
+
+" Show git diff in the gutter
+Bundle 'airblade/vim-gitgutter'
+
 " VIM Color schemes
 Bundle 'flazz/vim-colorschemes'
 call system("cp -a $HOME/.vim/bundle/vim-colorschemes/colors/* $HOME/.vim/colors/")
+
+" Show list of buffers in the command bar
+Bundle 'bling/vim-bufferline'
+
+" Undotree
+Bundle 'mbbill/undotree'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -89,8 +102,9 @@ set wildmode=list:longest,full  " List all options and complete
 set nobackup                    " disable backups
 set backspace=indent,eol,start  " Allow backspace beyond insertion point
 set expandtab               	" No tabs
-set tabstop=2                   " Set tab to 2 spaces
-set softtabstop=2
+set ttimeoutlen=50              " Remove the pause after exiting insert mode
+                                " in vim-airline
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -100,6 +114,7 @@ nmap \e :NERDTreeToggle<CR>
 nmap \l :setlocal number!<CR>:setlocal number?<CR>
 nmap \o :set paste!<CR>:set paste?<CR>
 nmap \q :nohlsearch<CR>
+nmap \u :UndotreeToggle<CR>
 
 " Toggle the latest 2 buffers
 nmap <C-e> :e#<CR>
@@ -109,17 +124,20 @@ map <C-n> :bnext<CR>
 map <C-p> :bprev<CR>
 
 " airline 
-let g:airline_powerline_fonts=0
-let g:airline_theme='airlineish'
-let g:airline_left_sep = '»'
-let g:airline_right_sep = '«'
-let g:airline_linecolumn_prefix = '¶ '
-let g:airline_enable_prefix = '⎇ '
+let g:airline_powerline_fonts=1
+let g:airline_theme='powerlineish'
+let g:airline_left_sep = '☞  '
+let g:airline_right_sep = ' ☜ '
+let g:airline_linecolumn_prefix = '♛ '
+let g:airline_enable_prefix = '☕ '
 let g:airline_paste_symbol = 'ρ'
 let g:airline_section_x=""
 let g:airline_section_y="%{strlen(&ft)?&ft:'none'}"
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#branch#enabled = 1 " enable/disable fugitive/lawrencium integration 
+
+" neocomplcache keybindings
+let g:neocomplcache_enable_at_startup = 1
 
 " enable/disable syntastic integration
 let g:airline#extensions#syntastic#enabled = 1
@@ -133,6 +151,8 @@ let g:NERDTreeWinPos = "right"
 " Set highlight for cursor line
 hi CursorLine ctermfg=NONE ctermbg=237 cterm=NONE guifg=NONE guibg=#2e373b gui=NONE
 
+" Disable auto comment
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
