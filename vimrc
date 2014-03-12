@@ -3,6 +3,8 @@ filetype off                  " required
 filetype plugin indent on     " required!
 syntax enable                 " Enable syntax highlighting
 set t_Co=256                  " Enable 256 colors
+scriptencoding utf-8
+set encoding=utf-8
 
 """ Setup Vundle automatically. Taken from timss/vimconf
     call system("mkdir -p $HOME/.vim/{plugin,undo,colors}")
@@ -46,6 +48,9 @@ Bundle 'tpope/vim-fugitive'
 " status line light as air
 Bundle 'bling/vim-airline'
 Bundle 'paranoida/vim-airlineish'
+
+" Lightline status line
+Bundle "itchyny/lightline.vim"
 
 " Snipmate
 Bundle "MarcWeber/vim-addon-mw-utils"
@@ -101,9 +106,7 @@ set wildmode=list:longest,full  " List all options and complete
 set nobackup                    " disable backups
 set backspace=indent,eol,start  " Allow backspace beyond insertion point
 set expandtab               	" No tabs
-set ttimeoutlen=50              " Remove the pause after exiting insert mode
-                                " in vim-airline
-
+set ttimeoutlen=50              " Remove the pause after exiting insert mode in vim-airline
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -122,20 +125,14 @@ nmap <C-e> :e#<CR>
 map <C-n> :bnext<CR>
 map <C-p> :bprev<CR>
 
+
 " airline 
 let g:airline_powerline_fonts=1
-let g:airline_theme='powerlineish'
-let g:airline_left_sep = '☞  '
-let g:airline_right_sep = ' ☜ '
-let g:airline_linecolumn_prefix = '♛ '
-let g:airline_enable_prefix = '☕ '
-let g:airline_paste_symbol = 'ρ'
+let g:airline_theme='airlineish'
 let g:airline_section_x=""
 let g:airline_section_y="%{strlen(&ft)?&ft:'none'}"
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#branch#enabled = 1 " enable/disable fugitive/lawrencium integration 
-
-" enable/disable syntastic integration
 let g:airline#extensions#syntastic#enabled = 1
 
 " remove trailing whitespace in puppet files
@@ -164,6 +161,43 @@ au BufRead,BufNewFile *_spec.rb
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 " Set the colorscheme
 set background=dark
 color molokai
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+""" Lightline configuration
+" Powerline font
+"let g:Powerline_symbols = 'fancy'
+
+"function! MyFugitive()
+"  if exists("*fugitive#head")
+"    let _ = fugitive#head()
+"    return strlen(_) ? "\ue0a0 "._ : ''
+"  endif
+"  return ''
+"endfunction
+
+
+"let g:lightline = {
+"        \ 'active': {
+"        \       'left': [ [ 'mode', 'paste'],
+"        \                 [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
+"        \ },
+"        \ 'component': {
+"        \       'readonly': '%{&readonly?"\ue0a2":""}',
+"        \       'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'
+"        \ },
+"        \ 'component_visible_condition': {
+"        \       'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
+"        \ },
+"        \ 'component_function': {
+"        \       'fugitive': 'MyFugitive',
+"        \ },
+"        \ 'separator': { 'left': "\ue0b0", 'right': "\ue0b2" },
+"        \ 'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" }
+"        \ }
+
