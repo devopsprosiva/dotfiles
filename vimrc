@@ -50,7 +50,7 @@ Bundle 'bling/vim-airline'
 Bundle 'paranoida/vim-airlineish'
 
 " Lightline status line
-"Bundle "itchyny/lightline.vim"
+"Bundle itchyny/lightline.vim"
 
 " Snipmate
 Bundle "MarcWeber/vim-addon-mw-utils"
@@ -74,6 +74,9 @@ Bundle 'bling/vim-bufferline'
 " Undotree
 Bundle 'mbbill/undotree'
 
+" Nerd commenter
+Bundle 'scrooloose/nerdcommenter'
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -82,6 +85,14 @@ Bundle 'mbbill/undotree'
 let g:syntastic_mode_map = { 'mode': 'active',
       \ 'active_filetypes': ['puppet', 'shell', 'ruby'],
       \ 'passive_filetypes': ['php', 'html', 'python'] }
+
+" Open the :Errors window automatically when an errors occurs
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_always_populate_loc_list = 1
+
+" Check syntax at file open and close
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
