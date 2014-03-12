@@ -50,7 +50,7 @@ Bundle 'bling/vim-airline'
 Bundle 'paranoida/vim-airlineish'
 
 " Lightline status line
-Bundle "itchyny/lightline.vim"
+"Bundle "itchyny/lightline.vim"
 
 " Snipmate
 Bundle "MarcWeber/vim-addon-mw-utils"
