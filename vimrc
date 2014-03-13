@@ -80,22 +80,6 @@ Bundle 'scrooloose/nerdcommenter'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-""" Syntastic
-" syntastic checking mode
-let g:syntastic_mode_map = { 'mode': 'active',
-      \ 'active_filetypes': ['puppet', 'shell', 'ruby'],
-      \ 'passive_filetypes': ['php', 'html', 'python'] }
-
-" Open the :Errors window automatically when an errors occurs
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_always_populate_loc_list = 1
-
-" Check syntax at file open and close
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Generic options
 set number                      " Show line numbers
@@ -137,7 +121,7 @@ map <C-n> :bnext<CR>
 map <C-p> :bprev<CR>
 
 
-" airline 
+" Airline options
 let g:airline_powerline_fonts=1
 let g:airline_theme='airlineish'
 let g:airline_section_x=""
@@ -146,17 +130,17 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#branch#enabled = 1 " enable/disable fugitive/lawrencium integration 
 let g:airline#extensions#syntastic#enabled = 1
 
-" remove trailing whitespace in puppet files
+" Remove trailing whitespace in puppet files
 autocmd FileType puppet autocmd BufWritePre <buffer> :%s/\s\+$//e
+
+" Disable auto comment
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 " Open nerdtree windows on the right
 let g:NERDTreeWinPos = "right"
 
 " Set highlight for cursor line
 hi CursorLine ctermfg=NONE ctermbg=237 cterm=NONE guifg=NONE guibg=#2e373b gui=NONE
-
-" Disable auto comment
-autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -180,35 +164,24 @@ color molokai
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-""" Lightline configuration
-" Powerline font
-"let g:Powerline_symbols = 'fancy'
+""" Syntastic options
 
-"function! MyFugitive()
-"  if exists("*fugitive#head")
-"    let _ = fugitive#head()
-"    return strlen(_) ? "\ue0a0 "._ : ''
-"  endif
-"  return ''
-"endfunction
+" Syntastic checking mode
+let g:syntastic_mode_map = { 'mode': 'active',
+      \ 'active_filetypes': ['puppet', 'shell', 'ruby'],
+      \ 'passive_filetypes': ['php', 'html', 'python'] }
 
+" Open the :Errors window automatically when an errors occurs
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_always_populate_loc_list = 1
 
-"let g:lightline = {
-"        \ 'active': {
-"        \       'left': [ [ 'mode', 'paste'],
-"        \                 [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
-"        \ },
-"        \ 'component': {
-"        \       'readonly': '%{&readonly?"\ue0a2":""}',
-"        \       'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'
-"        \ },
-"        \ 'component_visible_condition': {
-"        \       'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
-"        \ },
-"        \ 'component_function': {
-"        \       'fugitive': 'MyFugitive',
-"        \ },
-"        \ 'separator': { 'left': "\ue0b0", 'right': "\ue0b2" },
-"        \ 'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" }
-"        \ }
+" Check syntax at file open and close
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 1
 
+" Move between errors
+map <C-j> :lnext<CR>
+map <C-k> :lprevious<CR>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
