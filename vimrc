@@ -131,7 +131,7 @@ let g:airline#extensions#branch#enabled = 1 " enable/disable fugitive/lawrencium
 let g:airline#extensions#syntastic#enabled = 1
 
 " Remove trailing whitespace in puppet files
-autocmd FileType puppet autocmd BufWritePre <buffer> :%s/\s\+$//e
+autocmd FileType puppet,yaml autocmd BufWritePre <buffer> :%s/\s\+$//e
 
 " Disable auto comment
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
