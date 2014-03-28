@@ -101,6 +101,8 @@ set wildmode=list:longest,full  " List all options and complete
 set nobackup                    " disable backups
 set backspace=indent,eol,start  " Allow backspace beyond insertion point
 set expandtab               	" No tabs
+set tabstop=2                   " Set tab to 2 spaces
+set shiftwidth=2                " Set indentation to 2 spaces
 set ttimeoutlen=50              " Remove the pause after exiting insert mode in vim-airline
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
