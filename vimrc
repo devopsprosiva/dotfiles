@@ -49,18 +49,6 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'bling/vim-airline'
 Bundle 'paranoida/vim-airlineish'
 
-" Lightline status line
-"Bundle itchyny/lightline.vim"
-
-" Snipmate
-Bundle "MarcWeber/vim-addon-mw-utils"
-Bundle "tomtom/tlib_vim"
-Bundle "garbas/vim-snipmate"
-Bundle "honza/vim-snippets"
-
-" Autocompletion
-Bundle 'Valloric/YouCompleteMe'
-
 " Show git diff in the gutter
 Bundle 'airblade/vim-gitgutter'
 
@@ -77,9 +65,16 @@ Bundle 'mbbill/undotree'
 " Nerd commenter
 Bundle 'scrooloose/nerdcommenter'
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Snipmate
+Bundle "MarcWeber/vim-addon-mw-utils"
+Bundle "tomtom/tlib_vim"
+Bundle "garbas/vim-snipmate"
+Bundle "honza/vim-snippets"
 
+" Autocompletion
+Bundle 'Valloric/YouCompleteMe'
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Generic options
 set number                      " Show line numbers
