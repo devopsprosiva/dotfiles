@@ -6,3 +6,10 @@ https://medium.com/vim-tips/vim-install-latest-vim-with-ruby-and-python-support-
 
 https://medium.com/vim-tips/vim-install-powerline-symbols-font-4f94f0dde5ef
 
+* Download puppet for MAC from http://downloads.puppetlabs.com/mac/
+
+* To install puppet-lint, run
+
+    $ gem install puppet-lint
+    
+* Installation instructions for YouCompleteMe are at https://github.com/Valloric/YouCompleteMe
