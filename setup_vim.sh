@@ -7,7 +7,13 @@ else
     rm -f ~/.vimrc
   fi
 fi
+
+if [ -d ~/.vim ]; then
+  mv ~/.vim ~/.vim.bkp.`date +'%D-%T'`
+fi
   
 ln -s `pwd`/vimrc ~/.vimrc
+ln -s `pwd`/vim ~/.vim
+
 vim +BundleInstall +qall
 vim +qall
