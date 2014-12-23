@@ -133,6 +133,9 @@ autocmd FileType puppet,yaml autocmd BufWritePre <buffer> :%s/\s\+$//e
 " Disable auto comment
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
+" wrap git commit messages at 72 characters
+autocmd Filetype gitcommit setlocal spell textwidth=72
+
 " Open nerdtree windows on the right
 let g:NERDTreeWinPos = "right"
 
