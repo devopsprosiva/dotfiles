@@ -72,7 +72,10 @@ Bundle "garbas/vim-snipmate"
 Bundle "honza/vim-snippets"
 
 " Autocompletion
-" Bundle 'Valloric/YouCompleteMe'
+" To install:
+" $ cd ~/.vim/bundle/YouCompleteMe
+" $ ./install.sh --clang-completer
+Bundle 'Valloric/YouCompleteMe'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
