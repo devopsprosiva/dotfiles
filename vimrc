@@ -93,7 +93,7 @@ set linebreak                   " Break long lines by word, not char
 set ruler                       " ruler at the bottom
 set showmatch                   " Hilight matching braces/parens/etc.
 set cursorline                  " Show a line where the cursor is
-set history=20000               " How many lines of history to save
+set history=10000               " How many lines of history to save
 set wildmenu                    " Show possible completions on command line
 set wildmode=list:longest,full  " List all options and complete
 set nobackup                    " disable backups
