@@ -8,7 +8,11 @@ else
   fi
 fi
 
-ln -s ~/dotfiles/vim/vimrc ~/.vimrc
+if [ $OSTYPE == 'Linux' ]; then
+  ln -s ~/dotfiles/vim/vimrc_centos ~/.vimrc
+else
+  ln -s ~/dotfiles/vim/vimrc_mac ~/.vimrc
+fi
 
 vim +BundleInstall +qall
 vim +qall
