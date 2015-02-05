@@ -13,13 +13,14 @@ chsh -s /bin/zsh
 
 if [ $OSTYPE == 'Linux' ]; then
   ln -s ~/dotfiles/zsh/zshrc_centos ~/.zshrc
+  ln -s ~/dotfiles/zsh/prompt_sivac_setup_centos ~/.zprezto/modules/prompt/functions/
 else
   ln -s ~/dotfiles/zsh/zshrc_mac ~/.zshrc
+  ln -s ~/dotfiles/zsh/prompt_sivac_setup_mac ~/.zprezto/modules/prompt/functions/
 fi
 
 ln -s ~/dotfiles/zsh/zpreztorc ~/.zpreztorc
 
-ln -s ~/dotfiles/zsh/prompt_sivac_setup ~/.zprezto/modules/prompt/functions/
 
 exec zsh
 
