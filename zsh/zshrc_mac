@@ -1,0 +1,73 @@
+#
+# Executes commands at the start of an interactive session.
+#
+# Authors:
+#   Sorin Ionescu <sorin.ionescu@gmail.com>
+#
+
+# Source Prezto.
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+fi
+
+# Customize to your needs...
+
+# Prezto prompts
+zstyle ':prezto:module:prompt' theme 'sivac'
+
+# Vi mode
+bindkey -v
+bindkey -M vicmd '/' history-incremental-search-backward
+export KEYTIMEOUT=1
+
+alias c=clear
+alias root='sudo su -'
+alias df='df -h'
+alias du='du -hs'
+alias ll='ls -larth'
+alias ssh='ssh -o StrictHostKeyChecking=no'
+
+alias vi='/usr/local/bin/vim'
+alias vz='vi ~/.zshrc'
+alias vv='vi ~/.vimrc'
+alias ez='exec zsh'
+alias zp='vi ~/.zprezto/modules/prompt/functions/prompt_sivac_setup'
+alias nr='netstat -rn'
+
+# Git
+alias gs='git status'
+alias gp='git push origin master'
+alias gg='git push -u gerrit master'
+alias gci='git commit -v'
+alias ga='git add'
+alias gd='git diff'
+alias gpl='git pull'
+alias gf='git fetch'
+alias gc='git clone'
+alias gr='git remote -v'
+alias gcl='git config -l'
+alias gl="git log --color --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)%an <%ae>%Creset' --abbrev-commit"
+
+alias g='cd ~/git'
+alias gcs='cd ~/git/sivakalyanc'
+alias gcc='cd ~/git/cliqr'
+
+export EDITOR="/usr/local/bin/vim"
+export VISUAL="/usr/local/bin/vim"
+
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.7.0_71.jdk/Contents/Home"
+
+export PATH=/usr/local/bin:$PATH
+
+function remhosts {
+sed -e ''$1'd' ~/.ssh/known_hosts > ~/.ssh/tmp
+mv -f ~/.ssh/tmp ~/.ssh/known_hosts
+}
+
+#history
+h() { if [ -z "$*" ]; then history 1; else history 1 | egrep "$@"; fi; }
+
+# create md5 hash
+function md (
+echo -n "$1" | md5
+)
