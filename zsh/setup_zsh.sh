@@ -8,7 +8,6 @@ fi
 cd ~
 
 git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
-git clone https://github.com/sivakalyanc/dotfiles
 
 chsh -s /bin/zsh
 
