@@ -1,0 +1,45 @@
+#
+# Executes commands at the start of an interactive session.
+#
+# Authors:
+#   Sivakalyan Chintakana
+#
+
+# Source Prezto.
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+fi
+
+
+# VI mode
+bindkey -v
+bindkey -M vicmd '/' history-incremental-search-backward
+export KEYTIMEOUT=1
+
+alias c=clear
+alias df='df -h'
+alias du='du -hs'
+alias ll='ls -larth'
+
+alias vi='/bin/vim'
+alias vz='vi ~/.zshrc'
+alias vv='vi ~/.vimrc'
+alias ez='exec zsh'
+alias zp='vi ~/.zprezto/modules/prompt/functions/prompt_cliqr_setup'
+alias nr='netstat -rn'
+
+export EDITOR="/usr/local/bin/vim"
+export VISUAL="/usr/local/bin/vim"
+
+#history
+h() { if [ -z "$*" ]; then history -f 1; else history -f 1 | egrep "$@"; fi; }
+
+alias yin='yum -y install'
+alias yup='yum -y update'
+alias yrem='yum remove'
+alias ys='yum search'
+alias yl='yum list'
+alias yc='yum clean all'
+alias yrl='yum repolist'
+
+alias atop='atop 1'
