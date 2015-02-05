@@ -1,5 +1,7 @@
 #!/bin/bash
 
+OSTYPE=`uname`
+
 if [ -f ~/.vimrc ]; then
   mv ~/.vimrc ~/.vimrc.bkp.`date +'%D-%T'`
 else
