@@ -8,7 +8,7 @@ else
   fi
 fi
 
-ln -s `pwd`/vimrc ~/.vimrc
+ln -s ~/dotfiles/vimrc ~/.vimrc
 
 vim +BundleInstall +qall
 vim +qall
