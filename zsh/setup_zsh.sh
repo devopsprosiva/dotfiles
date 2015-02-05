@@ -17,5 +17,9 @@ else
   ln -s ~/dotfiles/zsh/zshrc_mac ~/.zshrc
 fi
 
+ln -s ~/dotfiles/zsh/zpreztorc ~/.zpreztorc
+
+ln -s ~/dotfiles/zsh/prompt_sivac_setup ~/.zprezto/modules/prompt/functions/
+
 exec zsh
 
