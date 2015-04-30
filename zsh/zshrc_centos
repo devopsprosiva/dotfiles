@@ -28,8 +28,8 @@ alias ez='exec zsh'
 alias zp='vi ~/.zprezto/modules/prompt/functions/prompt_cliqr_setup'
 alias nr='netstat -rn'
 
-export EDITOR="/usr/local/bin/vim"
-export VISUAL="/usr/local/bin/vim"
+export EDITOR="/bin/vim"
+export VISUAL="/bin/vim"
 
 #history
 h() { if [ -z "$*" ]; then history -f 1; else history -f 1 | egrep "$@"; fi; }
