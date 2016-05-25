@@ -71,3 +71,28 @@ h() { if [ -z "$*" ]; then history 1; else history 1 | egrep "$@"; fi; }
 function md (
 echo -n "$1" | md5
 )
+
+# du sort by size
+function duf {
+du -sk "$@" | sort -n | while read size fname; do for unit in k M G T P E Z Y; do if [ $size -lt 1024 ]; then echo  -e "${size}${unit}\t${fname}"; break; fi; size=$((size/1024)); done; done
+}
+
+# transpose
+function trs {
+awk '
+{
+    for (i=1; i<=NF; i++)  {
+        a[NR,i] = $i
+    }
+}
+NF>p { p = NF }
+END {
+    for(j=1; j<=p; j++) {
+        str=a[1,j]
+        for(i=2; i<=NR; i++){
+            str=str" "a[i,j];
+        }
+        print str
+    }
+}' $@
+}
