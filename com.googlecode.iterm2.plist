@@ -31326,9 +31326,9 @@
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>490 364 620 392 0 0 1600 877 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>201 237 796 473 0 0 1600 877 </string>
+	<string>682 404 796 473 0 0 1600 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>3 10 1585 729 0 0 1592 745 </string>
+	<string>0 4 1595 873 0 0 1600 877 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -32028,7 +32028,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2016-08-27T06:46:25Z</date>
+	<date>2016-08-28T07:26:21Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>WordCharacters</key>
