@@ -31291,6 +31291,8 @@
 	<true/>
 	<key>HideTab</key>
 	<false/>
+	<key>JobName</key>
+	<false/>
 	<key>LoadPrefsFromCustomFolder</key>
 	<true/>
 	<key>NSFontPanelAttributes</key>
@@ -31936,6 +31938,8 @@
 			<integer>0</integer>
 			<key>Prompt Before Closing 2</key>
 			<false/>
+			<key>Reduce Flicker</key>
+			<true/>
 			<key>Right Option Key Sends</key>
 			<integer>0</integer>
 			<key>Rows</key>
@@ -32086,12 +32090,18 @@
 	<false/>
 	<key>ShowBookmarkName</key>
 	<false/>
+	<key>ShowPaneTitles</key>
+	<true/>
+	<key>SmartPlacement</key>
+	<true/>
 	<key>TabStyle</key>
 	<integer>3</integer>
 	<key>TabViewType</key>
 	<integer>0</integer>
 	<key>UseBorder</key>
 	<false/>
+	<key>WindowNumber</key>
+	<true/>
 	<key>WordCharacters</key>
 	<string>˜</string>
 	<key>iTerm Version</key>
