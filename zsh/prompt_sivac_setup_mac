@@ -92,7 +92,7 @@ function prompt_mseri_setup {
 
   # Define prompts.
   PROMPT="${_prompt_mseri_colors[3]}[%n]%f${_prompt_mseri_colors[2]}%f ${_prompt_mseri_colors[5]}%~%f "'${vcs_info_msg_0_}'" %B%F{red}❯%F{yellow}❯%F{green}❯%f%b "
-  RPROMPT='%F{red}[%W %t]'
+#  RPROMPT='%F{red}[%W %t]'
 #RPROMPT='%F{blue}%u%t'
 }
 
