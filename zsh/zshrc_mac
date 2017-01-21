@@ -67,11 +67,6 @@ mv -f ~/.ssh/tmp ~/.ssh/known_hosts
 #history
 h() { if [ -z "$*" ]; then history 1; else history 1 | egrep "$@"; fi; }
 
-# create md5 hash
-function md (
-echo -n "$1" | md5
-)
-
 # du sort by size
 function duf {
 du -sk "$@" | sort -n | while read size fname; do for unit in k M G T P E Z Y; do if [ $size -lt 1024 ]; then echo  -e "${size}${unit}\t${fname}"; break; fi; size=$((size/1024)); done; done
