@@ -28,9 +28,6 @@ alias ez='exec zsh'
 alias zp='vi ~/.zprezto/modules/prompt/functions/prompt_cliqr_setup'
 alias nr='netstat -rn'
 
-export EDITOR="/bin/vim"
-export VISUAL="/bin/vim"
-
 #history
 h() { if [ -z "$*" ]; then history -f 1; else history -f 1 | egrep "$@"; fi; }
 
@@ -43,3 +40,55 @@ alias yc='yum clean all'
 alias yrl='yum repolist'
 
 alias atop='atop 1'
+
+# Git
+alias gs='git status'
+alias gp='git push origin master'
+alias gg='git push -u gerrit master'
+alias gci='git commit -v'
+alias ga='git add'
+alias gd='git diff'
+alias gpl='git pull'
+alias gf='git fetch'
+alias gc='git clone'
+alias gr='git remote -v'
+alias gcl='git config -l'
+alias gl="git log --color --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)%an <%ae>%Creset' --abbrev-commit"
+
+alias g='cd ~/git'
+alias gcs='cd ~/git/sivakalyanc'
+alias gcc='cd ~/git/cliqr'
+
+export EDITOR="vi"
+export VISUAL="vi"
+
+
+function remhosts {
+sed -e ''$1'd' ~/.ssh/known_hosts > ~/.ssh/tmp
+mv -f ~/.ssh/tmp ~/.ssh/known_hosts
+}
+
+# du sort by size
+function duf {
+du -sk "$@" | sort -n | while read size fname; do for unit in k M G T P E Z Y; do if [ $size -lt 1024 ]; then echo  -e "${size}${unit}\t${fname}"; break; fi; size=$((size/1024)); done; done
+}
+
+# transpose
+function trs {
+awk '
+{
+    for (i=1; i<=NF; i++)  {
+        a[NR,i] = $i
+    }
+}
+NF>p { p = NF }
+END {
+    for(j=1; j<=p; j++) {
+        str=a[1,j]
+        for(i=2; i<=NR; i++){
+            str=str" "a[i,j];
+        }
+        print str
+    }
+}' $@
+}
