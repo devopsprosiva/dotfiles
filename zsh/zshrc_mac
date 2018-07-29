@@ -27,7 +27,7 @@ alias du='du -hs'
 alias ll='ls -larth'
 alias ssh='ssh -o StrictHostKeyChecking=no'
 
-alias vi='/usr/local/bin/vim'
+alias vi='/usr/bin/vim'
 alias vz='vi ~/.zshrc'
 alias vv='vi ~/.vimrc'
 alias ez='exec zsh'
@@ -45,17 +45,13 @@ alias gpl='git pull'
 alias gf='git fetch'
 alias gc='git clone'
 alias gr='git remote -v'
-alias gcl='git config -l'
+alias gcfl='git config -l'
 alias gl="git log --color --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)%an <%ae>%Creset' --abbrev-commit"
 
 alias g='cd ~/git'
-alias gcs='cd ~/git/sivakalyanc'
-alias gcc='cd ~/git/cliqr'
 
-export EDITOR="/usr/local/bin/vim"
-export VISUAL="/usr/local/bin/vim"
-
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.7.0_71.jdk/Contents/Home"
+export EDITOR="/usr/bin/vim"
+export VISUAL="/usr/bin/vim"
 
 export PATH=/usr/local/bin:$PATH
 
@@ -91,3 +87,9 @@ END {
     }
 }' $@
 }
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/shiva/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/shiva/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/shiva/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/shiva/google-cloud-sdk/completion.zsh.inc'; fi
