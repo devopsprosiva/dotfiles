@@ -27,7 +27,6 @@ alias du='du -hs'
 alias ll='ls -larth'
 alias ssh='ssh -o StrictHostKeyChecking=no'
 
-alias vi='/usr/bin/vim'
 alias vz='vi ~/.zshrc'
 alias vv='vi ~/.vimrc'
 alias ez='exec zsh'
